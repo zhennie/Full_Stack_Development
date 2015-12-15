@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="productsCtrl">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Angular Experiment</title>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.0/semantic.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.0/semantic.min.js"
+  type="text/javascript"></script>
+
+  <script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+
+  <script src="@routes.Assets.at("javascripts/myAngular.js")" type="text/javascript"></script>
+
+</head>
+<body>
+  <div  ng-controller="ProductController as productCtrl">
+
+
+
+  <div class="ui menu">
+    <a class="active item">
+      <i class="home icon"></i> Home
+    </a>
+    <div class="right menu">
+      <div class="item">
+        <div class="ui transparent icon input">
+          <input type="text" placeholder="Search Brand"
+          ng-model="productCtrl.textInput">
+          <i class="search link icon"
+          ng-click="go()"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui cards">
+    <div class="card" ng-repeat="product in productCtrl.products">
+      <a class="image">
+        <img ng-src="{{product.imgUrl}}">
+      </a>
+      <div class="content">
+        <a class="header">{{product.name}}</a>
+        <div class="meta">
+          <a>{{product.brand}}</a>
+        </div>
+        <div class="description">
+        {{product.price | currency}}
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
