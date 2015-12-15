@@ -1,0 +1,6 @@
+SET REFERENTIAL_INTEGRITY FALSE;
+
+drop table if exists product;
+
+SET REFERENTIAL_INTEGRITY TRUE;
+
